@@ -1,2 +1,2 @@
 # Dotfiles
-My dotfiles. Currently just for NeoVim and ZSH.
+My dotfiles. Currently just for NeoVim, Tmux, and ZSH.
