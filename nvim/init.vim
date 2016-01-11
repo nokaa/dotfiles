@@ -36,6 +36,16 @@ let g:go_highlight_build_constraints = 1
 " rust.vim settings
 let g:rustfmt_autosave = 1
 
+" Writing mode
+func! WordProcessorMode()
+        setlocal formatoptions=1
+        map j gj
+        map k gk
+        setlocal spell spelllang=en_us
+        setlocal wrap
+        setlocal linebreak
+endfu
+com! WP call WordProcessorMode()
 
 " List of plugins installed
 " plug: https://github.com/junegunn/vim-plug
