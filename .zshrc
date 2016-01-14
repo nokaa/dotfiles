@@ -15,7 +15,7 @@ compinit
 
 # Prompt; `%1d` prints the current directory.
 # e.g. /some/long/path/name -> boredθname λ
-export PS1="boredθ%1d λ "
+export PS1="nokaaθ%1d λ "
 
 # Export NeoVim as editor variable
 export EDITOR=nvim
@@ -25,13 +25,13 @@ export MYPATH=$HOME/bin
 
 # Various Golang path variables
 export GOPATH=$HOME/gocode
-export GOROOT=$HOME/go
+#export GOROOT=$HOME/go
 
 # Path to cargo for rustfmt
 export CARGOPATH=$HOME/.multirust/toolchains/nightly/cargo/bin
 
 # Export PATH variable
-export PATH="$PATH:$MYPATH:$GOPATH/bin:$GOROOT:$GOROOT/bin:$CARGOPATH"
+export PATH="$PATH:$MYPATH:$GOPATH/bin:$CARGOPATH"
 
 # Node Version Manager stuff
 export NVM_DIR="$HOME/.nvm"
