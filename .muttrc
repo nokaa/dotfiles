@@ -1,0 +1,21 @@
+set realname="nokaa"
+set from="nokaa@cock.li"
+set use_from=yes
+
+set imap_pass = ""
+set folder = imaps://nokaa@cock.li@mail.cock.li/
+set spoolfile =+INBOX
+mailboxes =+INBOX
+
+set header_cache = "~/.cache/mutt"
+set message_cachedir = "~/.cache/mutt"
+unset imap_passive
+set imap_keepalive = 300
+set mail_check = 600
+set record =+Sent
+unset record
+
+set smtp_url = "smtp://nokaa@cock.li@mail.cock.li:587/"
+set my_pass = ""
+
+set editor="nvim"
