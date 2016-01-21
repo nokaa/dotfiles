@@ -7,6 +7,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'digitaltoad/vim-jade'
 Plug 'lambdatoast/elm.vim'
 Plug 'cespare/vim-toml'
+Plug 'neovimhaskell/haskell-vim'
 
 call plug#end()                                         " End plug section
 
@@ -54,3 +55,4 @@ com! WP call WordProcessorMode()
 " vim-jade: https://github.com/digitaltoad/vim-jade
 " elm.vim: https://github.com/lambdatoast/elm-vim
 " vim-toml: https://github.com/cespare/vim-toml
+" haskell-vim: https://github.com/neovimhaskell/haskell-vim

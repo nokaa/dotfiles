@@ -14,7 +14,7 @@ compinit
 # End of lines added by compinstall
 
 # Prompt; `%1d` prints the current directory.
-# e.g. /some/long/path/name -> boredθname λ
+# e.g. /some/long/path/name -> nokaaθname λ
 export PS1="nokaaθ%1d λ "
 
 # Export NeoVim as editor variable
@@ -30,8 +30,11 @@ export GOPATH=$HOME/gocode
 # Path to cargo for rustfmt
 export CARGOPATH=$HOME/.multirust/toolchains/nightly/cargo/bin
 
+# Path for cabal installs
+export CABALBIN=$HOME/.cabal/bin
+
 # Export PATH variable
-export PATH="$PATH:$MYPATH:$GOPATH/bin:$CARGOPATH"
+export PATH="$PATH:$MYPATH:$GOPATH/bin:$CARGOPATH:$CABALBIN"
 
 # Node Version Manager stuff
 export NVM_DIR="$HOME/.nvm"
@@ -40,3 +43,6 @@ export NVM_DIR="$HOME/.nvm"
 # Stuff for OCaml
 # OPAM configuration
 . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# Keychain
+eval $(keychain --eval --quiet id_rsa)

@@ -1,0 +1,62 @@
+defaults.ctl.card 1;
+
+pcm.dmixed-hdmi {
+	type asym
+	playback.pcm {
+		type dmix
+
+		ipc_key_add_uid true
+
+		ipc_key 5678293
+		ipc_perm 0660
+		ipc_gid audio
+
+		slave {
+                        # 2 for stereo, 6 for surround51, 8 for surround71
+			channels 2
+			pcm {
+				format S32_LE
+				#format S16_LE
+
+				#rate 44100
+				rate 48000
+
+				nonblock true
+
+				type hw
+				card 1
+				device 7
+				subdevice 0
+			}
+
+			# mplayer2 chooses 1024
+			# period_size 512 with buffer_size 16384 stops crackling in xmame
+			# 320 breaks flash - https://bbs.archlinux.org/viewtopic.php?id=129458
+			#period_size 512
+			period_size 1024
+			#period_size 512
+
+			# 4096 might make sound crackle
+			# mplayer2 chooses 8192. Half-Life 2 chooses 16384.
+			# If too large, use CONFIG_SND_HDA_PREALLOC_SIZE=2048
+			buffer_size 8192
+		}
+	}
+	# apulse (a cut-down replacement for pulseaudio) needs dsnoop
+	# https://bbs.archlinux.org/viewtopic.php?id=187258
+	capture.pcm "dsnoop"
+}
+
+pcm.!default{
+	type plug
+	slave.pcm "hdmivol"
+}
+
+pcm.hdmivol{
+	type softvol
+	slave.pcm "dmixed-hdmi"
+	control {
+    	name "Master"
+    	card 1
+  	}
+}
