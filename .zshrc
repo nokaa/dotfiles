@@ -46,3 +46,4 @@ export NVM_DIR="$HOME/.nvm"
 
 # Keychain
 eval $(keychain --eval --quiet id_rsa)
+eval $(dircolors ~/.dircolors)
