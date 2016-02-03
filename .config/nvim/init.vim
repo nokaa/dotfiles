@@ -3,11 +3,12 @@ call plug#begin('~/.nvim/plugged')                      "Begin plug section
 
 Plug 'https://github.com/fatih/vim-go.git'
 Plug 'rust-lang/rust.vim'
-Plug 'altercation/vim-colors-solarized'
+"Plug 'altercation/vim-colors-solarized'
 Plug 'digitaltoad/vim-jade'
 Plug 'lambdatoast/elm.vim'
 Plug 'cespare/vim-toml'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'flazz/vim-colorschemes'
 
 call plug#end()                                         " End plug section
 
@@ -15,7 +16,13 @@ call plug#end()                                         " End plug section
 set number			                        " Add line numbers
 syntax on			                        " Add syntax highlighting
 set background=dark                                     " Use dark background
-colorscheme solarized                                   " Use solarized as colorscheme
+let g:seoul256_background = 235                         " Set seoul256 background to a darker color to match temrinal
+colorscheme seoul256                                    " Use seoul256 as colorscheme
+"colorscheme solarized                                   " Use solarized as colorscheme
+"colorscheme tutticolori
+"colorscheme twilight256
+"colorscheme mango
+"colorscheme moria
 set nocp			                        " 'compatible' is not set
 filetype plugin indent on	                        " plugins are enabled
 
