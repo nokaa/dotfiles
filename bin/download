@@ -1,0 +1,3 @@
+#!/bin/bash
+
+scp nokaa@nokaa.moe:~/$1 .

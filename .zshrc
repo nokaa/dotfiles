@@ -22,6 +22,8 @@ export EDITOR=nvim
 export SUDO_EDITOR=nvim
 alias n=nvim
 
+alias firefox=firefox-developer
+
 # Location of user bin
 export MYPATH=$HOME/bin
 
@@ -54,3 +56,6 @@ eval $(keychain --eval --quiet id_rsa)
 
 # rbenv
 eval "$(rbenv init -)"
+
+# List todo
+task list

@@ -41,7 +41,7 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 " rust.vim settings
-let g:rustfmt_autosave = 1
+"let g:rustfmt_autosave = 1
 
 " haskell-vim settings
 let g:haskell_enable_quantification = 1
