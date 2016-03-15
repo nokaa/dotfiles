@@ -7,7 +7,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Source Code Pro 10
+font = Source Code Pro 12
 scrollback_lines = 1000
 search_wrap = true
 #icon_name = terminal
@@ -30,9 +30,9 @@ browser = firefox-developer
 
 [colors]
 #cursor = #dcdccc
-foreground = #657b83
-foreground_bold = #ffffff
-background = #002b36
+#foreground = #657b83
+#foreground_bold = #ffffff
+#background = #002b36
 
 # 20% background transparency (requires a compositor)
 #background = rgba(63, 63, 63, 0.8)
@@ -41,54 +41,88 @@ background = #002b36
 #highlight = #2f2f2f
 
 # colors from color0 to color254 can be set
-#color0 = #3f3f3f
-#color1 = #705050
-#color2 = #60b48a
-#color3 = #dfaf8f
-#color4 = #506070
-#color5 = #dc8cc3
-#color6 = #8cd0d3
-#color7 = #dcdccc
-#color8 = #709080
-#color9 = #dca3a3
-#color10 = #c3bf9f
-#color11 = #f0dfaf
-#color12 = #94bff3
-#color13 = #ec93d3
-#color14 = #93e0e3
-#color15 = #ffffff
-
 #!! black dark/light
-color0 = #073642
-color8 = #002b36
+#color0 = #073642
+#color8 = #002b36
 
 #!! red dark/light
-color1 = #dc322f
-color9 = #cb4b16
+#color1 = #dc322f
+#color9 = #cb4b16
 
 #!! green dark/light
-color2 = #859900
-color10 = #586e75
+#color2 = #859900
+#color10 = #586e75
 
 #!! yellow dark/light
-color3 = #b58900
-color11 = #657b83
+#color3 = #b58900
+#color11 = #657b83
 
 #!! blue dark/light
-color4 = #268bd2
-color12 = #839496
+#color4 = #268bd2
+#color12 = #839496
 
 #!! magenta dark/light
-color5 = #d33682
-color13 = #6c71c4
+#color5 = #d33682
+#color13 = #6c71c4
 
 #!! cyan dark/light
-color6 = #2aa198
-color14 = #93a1a1
+#color6 = #2aa198
+#color14 = #93a1a1
 
 #!! white dark/light
-color7 = #eee8d5
-color15 = #fdf6e3
+#color7 = #eee8d5
+#color15 = #fdf6e3
+
+foreground = #ebdbb2
+background = #282828
+
+color0 = #282828
+color8 = #7c6f64
+color1 = #cc241d
+color9 = #fb4934
+color2 = #98971a
+color10 = #b8bb26
+color3 = #d79921
+color11 = #fabd2f
+color4 = #458588
+color12 = #83a598
+color5 = #b16286
+color13 = #d3869b
+color6 = #689d6a
+color14 = #8ec07c
+color7 = #bdae93
+color15 = #ebdbb2
+
+color24 = #076678
+color66 = #427b58
+color88 = #9d0006
+color96 = #8f3f71
+color100 = #79740e
+color108 = #8ec07c
+color109 = #83a598
+color130 = #af3a03
+color136 = #b57614
+color142 = #b8bb26
+color167 = #fb4934
+color175 = #d3869b
+color208 = #fe8019
+color214 = #fabd2f
+color223 = #ebdbb2
+color228 = #f4e8ba
+color229 = #fdf4c1
+color230 = #ffffc8
+color234 = #1d2021
+color235 = #282828
+color236 = #32302f
+color237 = #3c3836
+color239 = #504945
+color241 = #665c54
+color243 = #7c6f64
+color244 = #928374
+color245 = #928374
+color246 = #a89984
+color248 = #bdae93
+color250 = #d5c4a1
 
 [hints]
 #font = Monospace 12
