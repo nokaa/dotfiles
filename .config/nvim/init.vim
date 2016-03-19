@@ -29,6 +29,7 @@ colorscheme seoul256                                    " Use seoul256 as colors
 "colorscheme moria
 set nocp			                        " 'compatible' is not set
 filetype plugin indent on	                        " plugins are enabled
+let mapleader=","                                       " Remap <Leader> to ,
 
 " Tab settings
 set autoindent			                        " Set autoindent
