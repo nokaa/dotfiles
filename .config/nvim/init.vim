@@ -9,6 +9,10 @@ Plug 'lambdatoast/elm.vim'
 Plug 'cespare/vim-toml'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'flazz/vim-colorschemes'
+Plug 'jreybert/vimagit'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()                                         " End plug section
 
@@ -57,6 +61,9 @@ let g:haskell_indent_where = 6
 let g:haskell_indent_do = 3
 let g:haskell_indent_in = 1
 let g:cabal_ident_section = 2
+
+" Airline config
+let g:airline_powerline_fonts = 1
 
 " Writing mode
 func! WordProcessorMode()
