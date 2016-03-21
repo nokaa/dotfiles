@@ -1,18 +1,20 @@
 " Plug settings
 call plug#begin('~/.nvim/plugged')                      "Begin plug section
 
+" Syntax/language specific
 Plug 'https://github.com/fatih/vim-go.git'
 Plug 'rust-lang/rust.vim'
-"Plug 'altercation/vim-colors-solarized'
 Plug 'digitaltoad/vim-jade'
 Plug 'lambdatoast/elm.vim'
 Plug 'cespare/vim-toml'
 Plug 'neovimhaskell/haskell-vim'
-Plug 'flazz/vim-colorschemes'
+" Git related
 Plug 'jreybert/vimagit'
 Plug 'airblade/vim-gitgutter'
+" Visuals
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'flazz/vim-colorschemes'
 
 call plug#end()                                         " End plug section
 
@@ -22,11 +24,6 @@ syntax on			                        " Add syntax highlighting
 set background=dark                                     " Use dark background
 let g:seoul256_background = 235                         " Set seoul256 background to a darker color to match temrinal
 colorscheme seoul256                                    " Use seoul256 as colorscheme
-"colorscheme solarized                                   " Use solarized as colorscheme
-"colorscheme tutticolori
-"colorscheme twilight256
-"colorscheme mango
-"colorscheme moria
 set nocp			                        " 'compatible' is not set
 filetype plugin indent on	                        " plugins are enabled
 let mapleader=","                                       " Remap <Leader> to ,
@@ -44,9 +41,6 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
-
-" rust.vim settings
-"let g:rustfmt_autosave = 1
 
 " haskell-vim settings
 let g:haskell_enable_quantification = 1
@@ -76,12 +70,3 @@ func! WordProcessorMode()
         setlocal linebreak
 endfu
 com! WP call WordProcessorMode()
-
-" List of plugins installed
-" plug: https://github.com/junegunn/vim-plug
-" vim-go: https://github.com/fatih/vim-go.git
-" vim-colors-solarized: https://github.com/altercation/vim-colors-solarized
-" vim-jade: https://github.com/digitaltoad/vim-jade
-" elm.vim: https://github.com/lambdatoast/elm-vim
-" vim-toml: https://github.com/cespare/vim-toml
-" haskell-vim: https://github.com/neovimhaskell/haskell-vim
