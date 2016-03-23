@@ -60,6 +60,9 @@ let g:cabal_ident_section = 2
 " Airline config
 let g:airline_powerline_fonts = 1
 
+" vimagit config
+autocmd User VimagitEnterCommit startinsert
+
 " Writing mode
 func! WordProcessorMode()
         setlocal formatoptions=1
