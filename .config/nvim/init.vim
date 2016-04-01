@@ -16,6 +16,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
 
+Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'jceb/vim-orgmode'
+
 call plug#end()                                         " End plug section
 
 " Color/syntax settings
@@ -30,9 +33,9 @@ let mapleader=","                                       " Remap <Leader> to ,
 
 " Tab settings
 set autoindent			                        " Set autoindent
-set tabstop=8			                        " Set tabs to 8 spaces
+set tabstop=4			                        " Set tabs to 8 spaces
 set expandtab			                        " Makes spaces instead of tabs
-set shiftwidth=8
+set shiftwidth=4
 
 
 " vim-go settings
@@ -62,6 +65,9 @@ let g:airline_powerline_fonts = 1
 
 " vimagit config
 autocmd User VimagitEnterCommit startinsert
+
+" ctrlp config
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Writing mode
 func! WordProcessorMode()
