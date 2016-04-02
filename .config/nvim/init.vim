@@ -8,6 +8,7 @@ Plug 'digitaltoad/vim-jade'
 Plug 'lambdatoast/elm.vim'
 Plug 'cespare/vim-toml'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'nokaa/vim.gopher'
 " Git related
 Plug 'jreybert/vimagit'
 Plug 'airblade/vim-gitgutter'
