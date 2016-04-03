@@ -77,6 +77,12 @@ func! CargoBuild()
 endfu
 com! Cargo call CargoBuild()
 
+" Cargo test command
+func! CargoTest()
+    execute "!cargo test"
+endfu
+com! CargoT call CargoTest()
+
 " Rustc command
 func! RustCompile()
     execute "!rustc ".bufname("%")
