@@ -18,6 +18,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
 
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'christoomey/vim-tmux-navigator'
 "Plug 'jceb/vim-orgmode'
 
 call plug#end()                                         " End plug section
@@ -69,6 +70,12 @@ autocmd User VimagitEnterCommit startinsert
 
 " ctrlp config
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+" Cargo build command
+func! CargoBuild()
+    execute "!cargo build"
+endfu
+com! Cargo call CargoBuild()
 
 " Writing mode
 func! WordProcessorMode()
