@@ -77,6 +77,12 @@ func! CargoBuild()
 endfu
 com! Cargo call CargoBuild()
 
+" Rustc command
+func! RustCompile()
+    execute "!rustc ".bufname("%")
+endfu
+com! Rustc call RustCompile()
+
 " Writing mode
 func! WordProcessorMode()
         setlocal formatoptions=1
