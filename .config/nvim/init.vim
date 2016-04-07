@@ -9,6 +9,7 @@ Plug 'lambdatoast/elm.vim'
 Plug 'cespare/vim-toml'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'nokaa/vim.gopher'
+Plug 'idris-hackers/idris-vim'
 " Git related
 Plug 'jreybert/vimagit'
 Plug 'airblade/vim-gitgutter'

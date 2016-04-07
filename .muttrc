@@ -3,7 +3,7 @@ set from="nokaa@cock.li"
 set use_from=yes
 
 set imap_pass = ""
-set folder = imaps://nokaa@cock.li@mail.cock.li/
+set folder = imaps://$from@mail.cock.li/
 set spoolfile =+INBOX
 mailboxes =+INBOX
 
@@ -15,7 +15,19 @@ set mail_check = 600
 set record =+Sent
 unset record
 
-set smtp_url = "smtp://nokaa@cock.li@mail.cock.li:587/"
 set my_pass = ""
 
+set smtp_url = "smtp://$from:$my_pass@mail.cock.li:587/"
+set ssl_force_tls = yes
+set ssl_starttls = yes
+
 set editor="nvim"
+
+# gpg stuff
+source ~/gpg.rc
+set pgp_use_gpg_agent = yes
+set pgp_sign_as = CE7BCBC2
+set pgp_timeout = 3600
+set crypt_autosign = yes
+set crypt_replyencrypt = yes
+set crypt_replysignencrypted = yes
