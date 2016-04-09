@@ -1,0 +1,10 @@
+[user]
+	email = nokaa@cock.li
+	name = nokaa
+	signingkey = CE7BCBC2
+[push]
+	default = simple
+[core]
+	editor = nvim
+[commit]
+	gpgsign = true
