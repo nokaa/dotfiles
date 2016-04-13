@@ -23,12 +23,12 @@ for folder in config; do
     ln -s "$folder" "~/.config"
 done
 
-ln -s .themes ~
-ln -s .gtkrc-2.0 ~
+ln -s `pwd`/.themes ~
+ln -s `pwd`/.gtkrc-2.0 ~
 
-ln -s .dircolors ~
-ln -s .tmux.conf ~
-ln -s .muttrc ~
+ln -s `pwd`/.dircolors ~
+ln -s `pwd`/.tmux.conf ~
+ln -s `pwd`/.muttrc ~
 
 # copy bin dir
 cp -r bin ~

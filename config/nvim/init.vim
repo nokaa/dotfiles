@@ -9,14 +9,18 @@ Plug 'lambdatoast/elm.vim'
 Plug 'cespare/vim-toml'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'nokaa/vim.gopher'
+Plug 'nokaa/vim.make'
 Plug 'idris-hackers/idris-vim'
 " Git related
-Plug 'jreybert/vimagit'
 Plug 'airblade/vim-gitgutter'
 " Visuals
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
+
+" LISP
+Plug 'jpalardy/vim-slime'
+Plug 'raymond-w-ko/vim-niji'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -63,11 +67,25 @@ let g:haskell_indent_do = 3
 let g:haskell_indent_in = 1
 let g:cabal_ident_section = 2
 
+" vim-slime config
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+let g:slime_dont_ask_default = 1
+
+" Scheme settings
+let g:niji_dark_colours = [
+    \ [ '81', '#5fd7ff'],
+    \ [ '99', '#875fff'],
+    \ [ '1',  '#dc322f'],
+    \ [ '76', '#5fd700'],
+    \ [ '3',  '#b58900'],
+    \ [ '2',  '#859900'],
+    \ [ '6',  '#2aa198'],
+    \ [ '4',  '#268bd2'],
+    \ ]
+
 " Airline config
 let g:airline_powerline_fonts = 1
-
-" vimagit config
-autocmd User VimagitEnterCommit startinsert
 
 " ctrlp config
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
