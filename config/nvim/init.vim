@@ -29,21 +29,28 @@ Plug 'christoomey/vim-tmux-navigator'
 call plug#end()                                         " End plug section
 
 " Color/syntax settings
-set number			                        " Add line numbers
-syntax on			                        " Add syntax highlighting
-set background=dark                                     " Use dark background
-let g:seoul256_background = 235                         " Set seoul256 background to a darker color to match temrinal
-colorscheme seoul256                                    " Use seoul256 as colorscheme
-set nocp			                        " 'compatible' is not set
-filetype plugin indent on	                        " plugins are enabled
-let mapleader=","                                       " Remap <Leader> to ,
+set number                                  " Add line numbers
+syntax on                                   " Add syntax highlighting
+set background=dark                         " Use dark background
+let g:seoul256_background = 235             " Set seoul256 background to a darker color to match temrinal
+colorscheme seoul256                        " Use seoul256 as colorscheme
+set nocp                                    " 'compatible' is not set
+filetype plugin indent on                   " plugins are enabled
+let mapleader=","                           " Remap <Leader> to ,
 
 " Tab settings
-set autoindent			                        " Set autoindent
-set tabstop=4			                        " Set tabs to 8 spaces
-set expandtab			                        " Makes spaces instead of tabs
+set autoindent                              " Set autoindent
+set tabstop=4                               " Set tabs to 4 spaces
+set expandtab                               " Makes spaces instead of tabs
 set shiftwidth=4
 
+" C settings
+augroup filetype_c
+    autocmd!
+    autocmd FileType c setlocal tabstop=8
+    autocmd FileType c setlocal noexpandtab
+    autocmd FileType c setlocal shiftwidth=8
+augroup END
 
 " vim-go settings
 let g:go_highlight_functions = 1
