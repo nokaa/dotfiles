@@ -30,6 +30,7 @@ call plug#end()                                         " End plug section
 
 " Color/syntax settings
 set number                                  " Add line numbers
+set relativenumber                          " Use relative numbers
 syntax on                                   " Add syntax highlighting
 set background=dark                         " Use dark background
 let g:seoul256_background = 235             " Set seoul256 background to a darker color to match temrinal
