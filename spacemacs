@@ -26,14 +26,21 @@ values."
      ;; auto-completion
      ;; better-defaults
      emacs-lisp
-     ;; git
-     ;; markdown
+     git
+     markdown
+     auto-completion
+;;     coq
+     go
+     html
+     ocaml
+     racket
+     rust
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; spell-checking
-     ;; syntax-checking
+     syntax-checking
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
@@ -238,6 +245,26 @@ values."
 It is called immediately after `dotspacemacs/init'.  You are free to put almost
 any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
+
+  (require 'package)
+  (add-to-list 'package-archives
+    '("melpa-unstable" . "http://melpa.org/packages/"))
+  (package-initialize)
+
+  ;; load proofgeneral
+  (load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
+
+  (setq-default dotspacemacs-configuration-layers '(
+    (auto-completion :variables
+      auto-completion-return-key-behavior 'complete
+      auto-completion-tab-key-behavior 'cycle
+      auto-completion-complete-with-key-sequence nil
+      auto-completion-complete-with-key-sequence-delay 0.1
+      auto-completion-private-snippets-directory nil)
+    ))
+
+  (setq merlin-ac-setup 't)
+  (setq-default rust-enable-racer t)
   )
 
 (defun dotspacemacs/user-config ()
@@ -248,3 +275,39 @@ layers configuration. You are free to put any user code."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(safe-local-variable-values
+   (quote
+    ((eval progn
+           (let
+               ((plzoo-root-directory
+                 (when buffer-file-name
+                   (locate-dominating-file buffer-file-name ".dir-locals.el")))
+                (plzoo-project-find-file
+                 (and
+                  (boundp
+                   (quote plzoo-project-find-file))
+                  plzoo-project-find-file)))
+             (when plzoo-root-directory
+               (setq tags-file-name
+                     (concat plzoo-root-directory "TAGS"))
+               (add-to-list
+                (quote compilation-search-path)
+                plzoo-root-directory)
+               (if
+                   (not plzoo-project-find-file)
+                   (setq compile-command
+                         (concat "make -C " plzoo-root-directory))))
+             (setq plzoo-executable
+                   (concat plzoo-root-directory "all"))))))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
