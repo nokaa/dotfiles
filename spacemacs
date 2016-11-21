@@ -26,10 +26,13 @@ values."
      ;; auto-completion
      ;; better-defaults
      emacs-lisp
+     c-c++
+     elm
      git
      markdown
+     latex
      auto-completion
-;;     coq
+     coq
      go
      html
      ocaml
@@ -114,7 +117,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+                               :size 16
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -213,7 +216,7 @@ values."
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers 'relative
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
@@ -252,7 +255,7 @@ in `dotspacemacs/user-config'."
   (package-initialize)
 
   ;; load proofgeneral
-  (load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
+  ;;(load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
 
   (setq-default dotspacemacs-configuration-layers '(
     (auto-completion :variables
@@ -265,6 +268,15 @@ in `dotspacemacs/user-config'."
 
   (setq merlin-ac-setup 't)
   (setq-default rust-enable-racer t)
+  (setq rust-format-on-save t)
+  ;; Keep the emacs server alive
+  ;; quit using SPC q q
+  (setq-default dotspacemacs-persistent-server t)
+  (setq-default tab-width 4)
+  (add-hook 'go-mode-hook
+            (lambda ()
+              (setq tab-width 4)
+              (setq go-indent 4)))
   )
 
 (defun dotspacemacs/user-config ()
@@ -280,6 +292,9 @@ layers configuration. You are free to put any user code."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (company-coq company-math math-symbol-lists company-auctex auctex-latexmk auctex pug-mode hide-comnt go-guru disaster company-c-headers cmake-mode clang-format flycheck-elm elm-mode powerline spinner org hydra parent-mode projectile seq pkg-info epl flx smartparens iedit anzu evil goto-chg undo-tree highlight s diminish bind-map bind-key packed dash helm avy helm-core async popup package-build uuidgen toc-org org-bullets link-hint git-link eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff dumb-jump column-enforce-mode cargo web-mode utop tuareg caml toml-mode tagedit smeargle slim-mode scss-mode sass-mode racket-mode faceup racer f rust-mode orgit ocp-indent mmm-mode merlin markdown-toc markdown-mode magit-gitflow less-css-mode jade-mode helm-gitignore request helm-css-scss helm-company helm-c-yasnippet haml-mode go-eldoc gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md flycheck-rust flycheck-pos-tip flycheck evil-magit magit magit-popup git-commit with-editor emmet-mode company-web web-completion-data company-statistics company-racer deferred company-quickhelp pos-tip company-go go-mode company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe use-package spacemacs-theme spaceline smooth-scrolling restart-emacs rainbow-delimiters quelpa popwin persp-mode pcre2el paradox page-break-lines open-junk-file neotree move-text macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu elisp-slime-nav define-word clean-aindent-mode buffer-move bracketed-paste auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
  '(safe-local-variable-values
    (quote
     ((eval progn
